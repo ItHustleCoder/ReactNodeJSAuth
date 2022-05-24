@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../redux/actions/user";
 import { useDispatch } from "react-redux";
 
@@ -7,10 +7,12 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(login(email, password));
+    navigate("/");
   };
 
   return (
@@ -87,7 +89,10 @@ function Login() {
               register
             </Link>{" "}
           </p>
-          <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto"
+          >
             <div className="pb-2 pt-4">
               <input
                 type="email"

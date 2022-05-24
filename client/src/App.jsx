@@ -7,6 +7,8 @@ import { auth } from "./redux/actions/user";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Header from "./components/parts/Headers";
+import PrivateRoutes from "./components/auth/PrivateRoutes";
+import Home from "./components/home/Home";
 
 function App() {
   const isAuth = useSelector((state) => state.user.isAuth);
@@ -25,7 +27,9 @@ function App() {
             <Route path="/register" element={<Register />} />
           </Routes>
         )}
-        <Header></Header>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+        </Routes>
 
         {/* <Login /> */}
         <ToastContainer />

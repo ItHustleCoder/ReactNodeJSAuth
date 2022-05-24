@@ -11,11 +11,9 @@ function Register() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     registration(email, password, name);
-    // setEmail("");
-    // setPassword("");
-    // setName("");
-
-    console.log(email, password, name);
+    setEmail("");
+    setPassword("");
+    setName("");
   };
 
   return (

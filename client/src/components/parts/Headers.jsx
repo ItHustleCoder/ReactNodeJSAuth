@@ -71,9 +71,7 @@ function Headers() {
             <div className="mr-5 hidden lg:block dark:text-red-500">
               <span className="font-semibold">12:00</span>
             </div>
-            <div className="">
-              <toggleButton></toggleButton>
-            </div>
+            <div className="">{/* <toggleButton></toggleButton> */}</div>
             <div className="pr-4 group inline-block">
               <button
                 className="outline-none focus:outline-none border dark:border-red-500 px-3 flex flex-row py-1 rounded-sm items-center min-w-32"
